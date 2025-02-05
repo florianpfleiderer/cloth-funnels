@@ -19,6 +19,7 @@ downloads/
 eggs/
 .eggs/
 lib/
+!PyFlex/lib/
 lib64/
 parts/
 sdist/
