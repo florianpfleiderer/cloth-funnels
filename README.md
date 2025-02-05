@@ -92,16 +92,21 @@ docker build -t cloth-funnels .
 To launch the docker container, go to the `cloth_funnels` subdirectory, then run
 ```
 export CLOTH_FUNNELS_PATH=${PWD}
-nvidia-docker run \
-	-v $CLOTH_FUNNELS_PATH:/workspace/cloth_funnels\
-	-v /path/to/your/anaconda3:/path/to/your/anaconda3\
-	--gpus all --shm-size=64gb  -d -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -it cloth-funnels
+docker run \
+	-v $CLOTH_FUNNELS_PATH:/workspace/cloth_funnels \
+	-v /home/florianpfleiderer/miniconda3:/home/florianpfleiderer/miniconda3 \
+	--gpus all --shm-size=8gb  -d -e DISPLAY=$DISPLAY -e QT_X11_NO_MITSHM=1 -it cloth-funnels
 ```
 You might need to change `--shm-size` appropriately for your system.
 
+Attach to the container
+```
+docker exec -it <container-id> bash
+```
+
 Add conda to PATH, then activate cloth-funnels
 ```sh
-export PATH=/path/to/your/anaconda3/bin:$PATH
+export PATH=/home/florianpfleiderer/miniconda3/bin:$PATH
 conda init bash
 source ~/.bashrc
 conda activate cloth-funnels
