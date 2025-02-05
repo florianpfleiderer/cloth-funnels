@@ -127,6 +127,7 @@ Make sure you set the environment variables correctly using `./prepare.sh`.
 Not setting `$PYTHONPATH` correctly will result in `ModuleNotFoundError: No module named 'pyflex'` when you try to `import pyflex`.
 
 You can check out [Softgym's Docker guide](https://github.com/Xingyu-Lin/softgym/blob/master/docker/docker.md) and [Daniel Seita](https://danieltakeshi.github.io/)'s [blog post](https://danieltakeshi.github.io/2021/02/20/softgym/) on installing PyFlex with Docker for more information.
+
 ### Models + Task Dataset
 
 You can download the pretrained models and the task dataset by running the following commands in the root directory
@@ -165,7 +166,6 @@ The result will appear in the `cloth_funnels/experiments` directory under the na
 </div>
 
 ## Evaluate Cloth Funnels 😯
-
 
 To evaluate Cloth Funnels on the long sleeve task evaluation dataset of 200 randomized and crumpled cloth instances specified in the paper, ensure that you have the `multi-longsleeve-eval.hdf5` dataset in `assets/tasks/` and run the following command from the root directory
 
@@ -245,6 +245,25 @@ python cloth_funnels/tasks/generate_tasks_script.py [cloth_category]
 where `cloth_category` is one of `longsleeve`, `pants`, `dress`, `jumpsuit`, `skirt`.
 
 This will give you a command that includes various `generate_tasks` commands chained together. Running this command will generate the task dataset for the specified cloth category.
+
+# Debugging
+
+Last Error:
+```
+(cloth-funnels) florianpfleiderer@florian-lenovo:~/cloth-funnels/cloth_funnels$ python3 run_sim.py 
+Traceback (most recent call last):
+  File "/home/florianpfleiderer/cloth-funnels/cloth_funnels/run_sim.py", line 1, in <module>
+    from cloth_funnels.utils.utils import (
+  File "/home/florianpfleiderer/cloth-funnels/cloth_funnels/utils/utils.py", line 3, in <module>
+    from cloth_funnels.environment import SimEnv
+  File "/home/florianpfleiderer/cloth-funnels/cloth_funnels/environment/__init__.py", line 1, in <module>
+    from .simEnv import SimEnv
+  File "/home/florianpfleiderer/cloth-funnels/cloth_funnels/environment/simEnv.py", line 9, in <module>
+    from cloth_funnels.utils.env_utils import (
+  File "/home/florianpfleiderer/cloth-funnels/cloth_funnels/utils/env_utils.py", line 8, in <module>
+    import pyflex
+ImportError: /home/florianpfleiderer/cloth-funnels/cloth_funnels/PyFleX/bindings/build/pyflex.cpython-39-x86_64-linux-gnu.so: undefined symbol: cudaSetupArgument
+```
 
 
 # Acknowledgements 🙏
