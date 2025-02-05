@@ -84,6 +84,8 @@ This codebases uses a CUDA accelerated cloth simulator which can load any arbitr
 The simulator is a fork of [PyFlex](https://github.com/YunzhuLi/PyFleX) from [Softgym](https://github.com/Xingyu-Lin/softgym), and requires a GPU to run.
 We have provided a Dockerfile in this repo for compiling and using this simulation environment for training in Docker.
 
+To build deprecated nvida/cuda images, use their [repository](https://gitlab.com/nvidia/container-images/cuda) follow the instructions. You have to copy and paste the folder from end-of-life into the dist/ directory to build from scratch.
+
 ```
 cd cloth_funnels
 docker build -t cloth-funnels .
@@ -247,6 +249,8 @@ where `cloth_category` is one of `longsleeve`, `pants`, `dress`, `jumpsuit`, `sk
 This will give you a command that includes various `generate_tasks` commands chained together. Running this command will generate the task dataset for the specified cloth category.
 
 # Debugging
+
+If files inside the PyFlex directory are missing, you can copy them from the original PyFlex repo.
 
 Last Error:
 ```
