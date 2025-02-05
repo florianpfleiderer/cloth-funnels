@@ -1,0 +1,3 @@
+[submodule "cloth_funnels/PyFleX"]
+	path = cloth_funnels/PyFleX
+	url = git@github.com:YunzhuLi/PyFleX.git
