@@ -30,16 +30,16 @@ if __name__ == "__main__":
     parser.add_argument("--wandb", type=str, default="disabled",
                         help="Run on wandb")
     parser.add_argument("--save_params", type=bool, default=True)
-    parser.add_argument("--save_dir", type=str, default="$PROJECT_DIR/folding-unfolding/src/learning/unet_models")
+    parser.add_argument("--save_dir", type=str, default=f"{os.environ["PROJECT_DIR"]}/folding-unfolding/src/learning/unet_models")
     parser.add_argument("--save_freq", type=int, default=10)
     parser.add_argument("--num_epochs", type=int, default=1000)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--eval_only", type=bool, default=False)
     parser.add_argument("--from_checkpoint", type=str, default=None)
     parser.add_argument("--replay_buffer_path", type=str,  \
-        default='$PROJECT_DIR/folding-unfolding/src/learning/4-shirt-finetune/replay_buffer.hdf5')
+        default=f'{os.environ["PROJECT_DIR"]}/folding-unfolding/src/learning/4-shirt-finetune/replay_buffer.hdf5')
     parser.add_argument("--download_dir", type=str,  \
-        default='$PROJECT_DIR/folding-unfolding/src/learning/nocs_unet_data')
+        default=f'{os.environ["PROJECT_DIR"]}/folding-unfolding/src/learning/nocs_unet_data')
     parser.add_argument("--max_dataset_size", type=int, default=None)
     parser.add_argument("--find_val_steps", action="store_true")
     parser.add_argument("--train_val_split", type=bool, default=0.95)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     now = datetime.now()
     training_instance = now.strftime("%m%d-%H%M%S")
-    models_dir = "$PROJECT_DIR/folding-unfolding/src/unet_models"
+    models_dir = f"{os.environ["PROJECT_DIR"]}/folding-unfolding/src/unet_models"
     save_path = os.path.join(models_dir, training_instance)
     os.makedirs(save_path)
     print("Starting training instance: ", training_instance)

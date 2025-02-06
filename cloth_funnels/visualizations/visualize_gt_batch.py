@@ -2,7 +2,7 @@
 
 from visualize_gt_vmaps import get_gt_vmaps
 import os 
-os.chdir('$PROJECT_DIR/folding-unfolding/src')
+os.chdir(f'{os.environ["PROJECT_DIR"]}/folding-unfolding/src')
 os.environ['DISPLAY']=":0.0"
 
 
@@ -21,7 +21,7 @@ import skimage.filters
 from notebooks.episode_visualizer import visualize_episode, get_edges
 import cv2
 
-input_dir = '$PROJECT_DIR/folding-unfolding/src/quantitative_comparisons/pull_arm_gts_offset_2/grid_search'
+input_dir = f'{os.environ["PROJECT_DIR"]}/folding-unfolding/src/quantitative_comparisons/pull_arm_gts_offset_2/grid_search'
 paths = glob.glob(os.path.join(input_dir, '*/replay_buffer.hdf5'))
 
 

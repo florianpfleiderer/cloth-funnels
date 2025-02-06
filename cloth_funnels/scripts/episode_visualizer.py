@@ -3,7 +3,7 @@
 import copy
 import datetime
 import os
-os.chdir('$PROJECT_DIR/cloth-funnels/cloth_funnels')
+os.chdir(f'{os.environ["PROJECT_DIR"]}/cloth-funnels/cloth_funnels')
 import pathlib
 import pickle as pkl
 import sys

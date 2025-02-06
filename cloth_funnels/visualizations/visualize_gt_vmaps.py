@@ -5,7 +5,7 @@ from scipy import interpolate
 import matplotlib.pyplot as plt
 from scipy.interpolate.rbf import Rbf  # radial basis functions
 
-input_path = '$PROJECT_DIR/folding-unfolding/src/result1_qualitative/grid_search/replay_buffer.hdf5'
+input_path = f'{os.environ["PROJECT_DIR"]}/folding-unfolding/src/result1_qualitative/grid_search/replay_buffer.hdf5'
 save_path = input_path.replace('replay_buffer.hdf5', 'groundtruth_vmaps.png')
 
 def get_gt_vmaps(input_path):
