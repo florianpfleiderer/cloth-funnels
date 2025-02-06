@@ -21,7 +21,7 @@ import os
 import matplotlib.pyplot as plt
 from skimage import draw
 
-os.chdir('/local/crv/acanberk/folding-unfolding/src')
+os.chdir('$PROJECT_DIR/folding-unfolding/src')
 
 from learning.nets import *
 
@@ -52,7 +52,7 @@ pix_place_dist = 10
 obs_dim = 128
 action_primitives = ['place']
 
-ckpt = torch.load('/local/crv/acanberk/folding-unfolding/src/overfit-place-random-supervised-deformable/pretrain/16_ckpt.pth')
+ckpt = torch.load('$PROJECT_DIR/folding-unfolding/src/overfit-place-random-supervised-deformable/pretrain/16_ckpt.pth')
 policy = MaximumValuePolicy(action_expl_prob=0, action_expl_decay=0, \
     value_expl_prob=0, value_expl_decay=0, num_rotations=num_rotations, pix_grasp_dist=pix_grasp_dist, pix_drag_dist=pix_drag_dist, \
         pix_place_dist = pix_place_dist, num_scales=num_scales, obs_dim=obs_dim, action_primitives=action_primitives, \

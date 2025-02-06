@@ -3,7 +3,7 @@ import h5py
 from filelock import FileLock
 
 
-replay_buffer = "/local/crv/acanberk/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5"
+replay_buffer = "$PROJECT_DIR/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5"
 
 with FileLock(replay_buffer + ".lock"):
     with h5py.File(replay_buffer, 'a') as f:
@@ -25,8 +25,8 @@ if __name__ == "__main__":
     import cv2
     import pickle as pkl
 
-    replay_buffer_path = "/local/crv/acanberk/folding-unfolding/src/correspondence_images_"
-    target_nocs_path = "/local/crv/acanberk/folding-unfolding/src/learning/target_nocs_1.pkl"
+    replay_buffer_path = "$PROJECT_DIR/folding-unfolding/src/correspondence_images_"
+    target_nocs_path = "$PROJECT_DIR/folding-unfolding/src/learning/target_nocs_1.pkl"
     
     # #load pickle from target_nocs_path
     # rgbd, target_nocs_a = pickle_to_rgbd_nocs(target_nocs_path)

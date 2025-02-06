@@ -13,8 +13,8 @@ import pytorch_lightning as pl
 from cloth_funnels.learning.utils import rgbd_to_tensor
 from scipy.spatial import KDTree
 
-network_checkpoint = "/local/crv/acanberk/folding-unfolding/src/learning/nocs_unet_pretrained_2.ckpt"
-target_nocs_path = "/local/crv/acanberk/folding-unfolding/src/learning/target_nocs_1.pkl"
+network_checkpoint = "$PROJECT_DIR/folding-unfolding/src/learning/nocs_unet_pretrained_2.ckpt"
+target_nocs_path = "$PROJECT_DIR/folding-unfolding/src/learning/target_nocs_1.pkl"
 
 #load nocs unet from checkpoint
 # nocs_unet = NOCSUNet.load_from_checkpoint(network_checkpoint, n_channels=1, n_classes=64*3)
@@ -212,7 +212,7 @@ def get_flow_correspondence(nocs, coverage, u=[1, 0], \
 
 if __name__ == "__main__":
     import sys 
-    sys.path.append("/local/crv/acanberk/folding-unfolding/src/")
+    sys.path.append("$PROJECT_DIR/folding-unfolding/src/")
 
     from learning.nocs_unet_inference import flip_nocs, nocs_pred, pickle_to_rgbd_nocs, get_flow_correspondence
     import matplotlib.pyplot as plt 
@@ -220,8 +220,8 @@ if __name__ == "__main__":
     import torch
     import torchvision
 
-    replay_buffer_path = "/local/crv/acanberk/folding-unfolding/src/correspondence_images_"
-    target_nocs_path = "/local/crv/acanberk/folding-unfolding/src/learning/target_nocs_1.pkl"
+    replay_buffer_path = "$PROJECT_DIR/folding-unfolding/src/correspondence_images_"
+    target_nocs_path = "$PROJECT_DIR/folding-unfolding/src/learning/target_nocs_1.pkl"
     num_figs = 10
 
     _, target_nocs_a = pickle_to_rgbd_nocs(target_nocs_path)

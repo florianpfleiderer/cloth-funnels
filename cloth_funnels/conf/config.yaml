@@ -46,7 +46,7 @@ constant_positional_enc: True
 
 #nocs 
 nocs_mode: collapsed
-keypoint_model_path: /local/crv/acanberk/cloth-funnels/models/keypoint_model.ckpt
+keypoint_model_path: $PROJECT_DIR/cloth-funnels/models/keypoint_model.ckpt
 
 # pretrain:
 pretrain_epochs: 

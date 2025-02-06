@@ -162,7 +162,7 @@ class KeypointDeeplab(pl.LightningModule):
         #     axs[1, x].imshow(to_numpy(scoremaps[batch_idx, x]))
         #     axs[2, x].imshow(to_numpy(target_scoremap[batch_idx, x]))
         #     axs[3, x].imshow(to_numpy(input_img[batch_idx]).transpose(1, 2, 0)[:, :, 0]/3 + to_numpy(target_scoremap[batch_idx, x]))
-        # plt.savefig(f'/local/crv/acanberk/folding-unfolding/src/logs/log_images/kp_images/{np.random.randint(0, 30)}.png')
+        # plt.savefig(f'$PROJECT_DIR/folding-unfolding/src/logs/log_images/kp_images/{np.random.randint(0, 30)}.png')
 
         avg_keypoint_distances = []
         for i in range(scoremaps.shape[1]):

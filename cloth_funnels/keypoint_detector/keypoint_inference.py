@@ -1,6 +1,6 @@
 #%%
 import os 
-# os.chdir('/local/crv/acanberk/cloth-funnels/cloth_funnels')
+# os.chdir('$PROJECT_DIR/cloth-funnels/cloth_funnels')
 import numpy as np
 import h5py
 import matplotlib.pyplot as plt
@@ -78,12 +78,12 @@ class KeypointDetector():
    
 if __name__ == "__main__":
 
-    model_path = '/local/crv/acanberk/folding-unfolding/src/outputs/2022-08-26/16-32-41/checkpoints/epoch=292-val_keypoint_dist=2.9334.ckpt'
+    model_path = '$PROJECT_DIR/folding-unfolding/src/outputs/2022-08-26/16-32-41/checkpoints/epoch=292-val_keypoint_dist=2.9334.ckpt'
     model = KeypointDetector(model_path)
 
     import skvideo.io
 
-    video_path = '/local/crv/acanberk/folding-unfolding/src/shirt_data/buffer0_video.mp4'
+    video_path = '$PROJECT_DIR/folding-unfolding/src/shirt_data/buffer0_video.mp4'
     
     def draw_keypoint(img, pred_keypoint):
         cv2.drawMarker(img, pred_keypoint, 
@@ -119,7 +119,7 @@ if __name__ == "__main__":
         
 
 
-    # with h5py.File('/local/crv/acanberk/folding-unfolding/src/experiments/03-dc2c-fr-unfn/latest_ckpt_eval_4/replay_buffer.hdf5') as dataset:
+    # with h5py.File('$PROJECT_DIR/folding-unfolding/src/experiments/03-dc2c-fr-unfn/latest_ckpt_eval_4/replay_buffer.hdf5') as dataset:
     #     keys = list(dataset.keys())
     #     np.random.shuffle(keys)
     #     num_samples = 5
@@ -156,9 +156,9 @@ if __name__ == "__main__":
     #     plt.show()
 
 
-    # model_path = '/local/crv/acanberk/folding-unfolding/src/outputs/2022-08-26/16-32-41/checkpoints/epoch=292-val_keypoint_dist=2.9334.ckpt'
+    # model_path = '$PROJECT_DIR/folding-unfolding/src/outputs/2022-08-26/16-32-41/checkpoints/epoch=292-val_keypoint_dist=2.9334.ckpt'
     # model = KeypointDetector(model_path)
-    # with h5py.File('/local/crv/acanberk/folding-unfolding/src/experiments/03-dc2c-fr-unfn/latest_ckpt_eval_4/replay_buffer.hdf5') as dataset:
+    # with h5py.File('$PROJECT_DIR/folding-unfolding/src/experiments/03-dc2c-fr-unfn/latest_ckpt_eval_4/replay_buffer.hdf5') as dataset:
     #     keys = list(dataset.keys())
     #     np.random.shuffle(keys)
     #     num_samples = 5

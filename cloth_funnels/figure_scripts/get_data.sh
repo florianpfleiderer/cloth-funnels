@@ -1,1 +1,1 @@
-rsync -avzP crv03:/local/crv/acanberk/folding-unfolding/src/visualizations/figures/pipeline_figure/test_recreate/replay_buffer.hdf5 .
+rsync -avzP crv03:$PROJECT_DIR/folding-unfolding/src/visualizations/figures/pipeline_figure/test_recreate/replay_buffer.hdf5 .

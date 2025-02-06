@@ -121,6 +121,7 @@ Then, inside the `cloth_funnels` directory within the docker container, compile 
 
 The compilation will result in a `.so` shared object file. 
 `./prepare.sh` sets the environment variables needed for compilation and also tells the python interpreter to look into the build directory containing the compiled `.so` file.
+To set a path to the project, consider `export PROJECT_DIR="<path/to/project/root>"`.
 
 After this `.so` object file is created, you should be able to run experiments outside of docker as well as inside.
 In my experience as well as [other's in the community](https://github.com/Xingyu-Lin/softgym/issues/5), docker is best used *only for compilation* and usually fails for running experiments.

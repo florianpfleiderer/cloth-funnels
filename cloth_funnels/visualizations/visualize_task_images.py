@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import os
 
 #%%
-# os.chdir("/local/crv/acanberk/folding-unfolding/src/")
-hdf5_path = '/local/crv/acanberk/folding-unfolding/src/shirt-perturbation.hdf5'
+# os.chdir("$PROJECT_DIR/folding-unfolding/src/")
+hdf5_path = '$PROJECT_DIR/folding-unfolding/src/shirt-perturbation.hdf5'
 
 def visualize_grid(images, n):
     next_divisible= (images.shape[0] // n + 1)

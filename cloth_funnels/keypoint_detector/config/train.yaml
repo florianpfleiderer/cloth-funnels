@@ -1,5 +1,5 @@
 datamodule:
-  data_dir: /local/crv/acanberk/folding-unfolding/src/keypoint_detector/train_0
+  data_dir: $PROJECT_DIR/folding-unfolding/src/keypoint_detector/train_0
   train_split: 0.95
   split_seed: 0
   batch_size: 128

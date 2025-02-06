@@ -1278,7 +1278,7 @@ class SimEnv:
         #     axs[0].set_title(indices)
         #     axs[1].set_title(action)
         #     #create grasp cltoh images directory
-        #     self.grasp_clothes_dir = "/local/crv/acanberk/folding-unfolding/src/failed_grasp"
+        #     self.grasp_clothes_dir = "$PROJECT_DIR/folding-unfolding/src/failed_grasp"
         #     if not os.path.exists(self.grasp_clothes_dir):
         #         os.makedirs(self.grasp_clothes_dir)
         #     plt.savefig(f"{self.grasp_clothes_dir}/grasp_cloth{np.random.randint(0, 100)}.png")

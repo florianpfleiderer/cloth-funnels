@@ -225,7 +225,7 @@ class NOCSUNetDataModule(pl.LightningDataModule):
 
 if __name__ == "__main__":
 
-    # replay_buffer_path="/local/crv/acanberk/folding-unfolding/src/test-sim/replay_buffer.hdf5"
+    # replay_buffer_path="$PROJECT_DIR/folding-unfolding/src/test-sim/replay_buffer.hdf5"
     # with FileLock(replay_buffer_path + '.lock'):
     #     transforms=transforms.Compose(
     #         [transforms.ToTensor()]
@@ -236,11 +236,11 @@ if __name__ == "__main__":
     #     for data in dataset:
     #         print(data[0].shape, data[1].shape, data[2].shape)
     #         break
-    # ds = NOCSUNet_Dataset("/local/crv/acanberk/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5", percent_coverage_threshold=0.5)
+    # ds = NOCSUNet_Dataset("$PROJECT_DIR/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5", percent_coverage_threshold=0.5)
     # print(ds[0])
 
-    dm = NOCSUNetDataModule("/local/crv/acanberk/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5",
-                            download_dir="/local/crv/acanberk/folding-unfolding/src/learning/replay_buffer_data")
+    dm = NOCSUNetDataModule("$PROJECT_DIR/folding-unfolding/src/flingbot_eval_2/replay_buffer.hdf5",
+                            download_dir="$PROJECT_DIR/folding-unfolding/src/learning/replay_buffer_data")
     dm.prepare_data()
     dm.setup(nonzero_pixel_threshold=0.05, percent_coverage_threshold=0.2)
 
